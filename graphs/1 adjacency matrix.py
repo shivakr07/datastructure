@@ -2,7 +2,7 @@
 #  n is the number of the nodes
 # m is the number of the edges
 if __name__ == '__main__':
-    n, m = map(int, input.split())
+    # n, m = map(int, input.split())
     n = 5
     edges = [[0,1], [0,4], [1,2], [1,3], [3,4], [1,4]]
     adjmat = [[0 for i in range(n)] for j in range(n)]

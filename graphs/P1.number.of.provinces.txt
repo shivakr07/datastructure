@@ -1,0 +1,35 @@
+class Solution:
+    def findCircleNum(self, isConnected: List[List[int]]) -> int:
+        def adjlist(adjmat):
+            graph = {}
+            for i in range(len(adjmat)):
+                for j in range(len(adjmat)):
+                    if adjmat[i][j] == 1:
+                        if i in graph:
+                            graph[i].append(j)
+                        else:
+                            graph[i] = [j]
+            return graph
+        graph = adjlist(isConnected)
+        
+        def dfs_helper(vertex, visited):
+            visited[vertex] = True
+            # print(vertex, end=" ")
+
+            for neighbour in graph[vertex]:
+                if visited[neighbour] == False:
+                    dfs_helper(neighbour, visited)
+
+        # dfs function
+        def DFS(graph,nV, count):
+            visited = [False for i in range(nV)]
+            for src in graph:
+                if visited[src] == False:
+                    count += 1
+                    dfs_helper(src, visited)
+            return count
+        
+        return DFS(graph, len(graph),0)
+    
+
+    
