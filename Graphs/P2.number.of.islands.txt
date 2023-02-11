@@ -1,0 +1,57 @@
+#User function Template for python3
+
+import sys
+sys.setrecursionlimit(10**8)
+class Solution:
+        
+    def numIslands(self,grid):
+        def bfs(row, col, vis, grid):
+            queue = []
+            queue.append([row, col])
+            vis[row][col] = True
+            n = len(grid)
+            m = len(grid[0])
+            
+            while len(queue):
+                row  = queue[0][0]
+                col = queue[0][1]
+                queue.pop(0)
+                
+                # traverse in the neighbours and mark them present
+                
+                for delrow in range(-1 , 2):
+                    for delcol in range(-1, 2):
+                        nrow = row + delrow
+                        ncol = col + delcol
+                        
+                        if nrow >= 0 and ncol >= 0 and nrow < n and ncol < m and vis[nrow][ncol] == False and grid[nrow][ncol] == 1:
+                            vis[nrow][ncol] = True
+                            queue.append([nrow, ncol])
+        #code here
+        count = 0
+        n = len(grid)
+        m = len(grid[0])
+        
+        vis = [[False for i in range(m)] for i in range(n)]
+        
+        for i in range(n):
+            for j in range(m):
+                if vis[i][j] == False and grid[i][j] == 1:
+                    count += 1
+                    bfs(i, j, vis, grid)
+        return count
+
+
+#{ 
+ # Driver Code Starts
+#Initial Template for Python 3
+
+if __name__=="__main__":
+    for _ in range(int(input())):
+        n,m=map(int,input().strip().split())
+        grid=[]
+        for i in range(n):
+            grid.append([int(i) for i in input().strip().split()])
+        obj=Solution()
+        print(obj.numIslands(grid))
+# } Driver Code Ends

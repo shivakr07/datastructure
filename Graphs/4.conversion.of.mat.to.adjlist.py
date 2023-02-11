@@ -7,11 +7,13 @@ def adjlist(adjmat):
         for j in range(len(adjmat)):
             if adjmat[i][j] == 1:
                 if i in graph:
-                    graph[i].append(j)
+                    graph[i].append(j) 
                 else:
                     graph[i] = [j]
-
+                    
     print(graph)
+    
+    
 if __name__ == '__main__':
     # n, m = map(int, input.split())
     n = 5
