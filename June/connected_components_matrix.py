@@ -1,6 +1,6 @@
+# number of connected components in matrix or number of islands
+
 class Solution:
-    
-    
     def numIslands(self, grid):
         def dfs(grid, i, j):
             if i<0 or j<0 or i>=len(grid) or j>=len(grid[0]) or grid[i][j] != '1':
