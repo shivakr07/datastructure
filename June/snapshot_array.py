@@ -1,3 +1,5 @@
+# nice logic
+
 class SnapshotArray:
     def __init__(self, length: int):
         self.array = [[(0, 0)] for _ in range(length)]
