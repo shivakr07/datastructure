@@ -31,3 +31,5 @@ class Solution:
                     if bfs(i, j):
                         return True
         return False
+
+#  my logic was same but little mistakes here and there
