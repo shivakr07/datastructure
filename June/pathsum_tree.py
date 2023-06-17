@@ -29,3 +29,5 @@ class Solution:
             if sum(item) == targetSum:
                 return True
         return False
+
+#  whenever you are applying backtracking then always remove/pop it after the recursion calls 
