@@ -7,3 +7,5 @@ class Solution:
             summ += i
             altitude.append(summ)
         return max(altitude)
+
+# easy and daily  :  array question 
