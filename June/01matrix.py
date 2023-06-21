@@ -18,3 +18,5 @@ class Solution:
                     matrix[new_x][new_y] = matrix[x][y] + 1
         
         return matrix
+    
+# a nice bfs solution with out extra memory and logic
