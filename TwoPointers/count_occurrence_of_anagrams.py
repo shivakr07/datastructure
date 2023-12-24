@@ -1,6 +1,6 @@
 #User function Template for python3
 
-def search(self,pat, txt):
+def search(pat, txt):
     # code here
     string = txt
     ptr = pat
@@ -27,7 +27,7 @@ def search(self,pat, txt):
         if (j-i+1) < k:
             j += 1
         elif (j-i+1) == k:
-            if count == 0:
+            if count == 0 and pat != txt:
                 ans += 1
         
             if string[i] in d:
@@ -46,11 +46,15 @@ def search(self,pat, txt):
 
 # Driver code 
 if __name__ == "__main__": 		
-    tc=int(input())
-    while tc > 0:
-        txt=input().strip()
-        pat=input().strip()
+    
+    txt=['m','o','m']
+    pat=''
+    for i in range(len(txt)):
+        pat = "".join(txt[:i])
+        l = len(pat)
         
+        # txt = "".join(txt[l-1:])
         ans = search(pat, txt)
         print(ans)
         
+#  

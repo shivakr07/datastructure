@@ -20,3 +20,5 @@ while t :
         print(0)
     t -= 1
     
+
+    
