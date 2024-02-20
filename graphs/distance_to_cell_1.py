@@ -15,6 +15,7 @@ def nearest(self, grid):
     for i in range(n):
         for j in range(m):
             if mat[i][j] == 1:
+                # change this to mat[i][j] == 0 in case of leetcode
                 q.append((i, j, 0))
                 vis[i][j] = 1
             else:
